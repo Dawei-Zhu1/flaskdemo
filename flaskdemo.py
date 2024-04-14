@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import wikipedia
+import doctest
 
 app = Flask(__name__)
 # Set the secret key. Keep this really secret:
@@ -13,7 +14,7 @@ def home():
 
 @app.route('/about')
 def about():
-    return "I am still working on this"
+    return render_template("about.html")
 
 
 @app.route('/search', methods=['POST', 'GET'])
